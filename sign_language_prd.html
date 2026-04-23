@@ -1,0 +1,208 @@
+
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--font-sans); }
+  .prd { padding: 1.5rem 0; max-width: 680px; }
+  .prd-header { border-bottom: 0.5px solid var(--color-border-tertiary); padding-bottom: 1.25rem; margin-bottom: 1.5rem; }
+  .prd-title { font-size: 22px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 6px; }
+  .prd-meta { display: flex; gap: 12px; flex-wrap: wrap; }
+  .badge { font-size: 12px; padding: 3px 10px; border-radius: var(--border-radius-md); font-weight: 500; }
+  .badge-blue { background: #E6F1FB; color: #0C447C; }
+  .badge-teal { background: #E1F5EE; color: #085041; }
+  .badge-amber { background: #FAEEDA; color: #633806; }
+  .badge-purple { background: #EEEDFE; color: #3C3489; }
+  .section { margin-bottom: 1.75rem; }
+  .section-title { font-size: 13px; font-weight: 500; color: var(--color-text-secondary); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.75rem; }
+  .card { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 1rem 1.25rem; margin-bottom: 10px; }
+  .card-title { font-size: 15px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 4px; }
+  .card-desc { font-size: 14px; color: var(--color-text-secondary); line-height: 1.6; }
+  .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; margin-bottom: 1.5rem; }
+  .metric { background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 0.9rem 1rem; }
+  .metric-label { font-size: 12px; color: var(--color-text-secondary); margin-bottom: 4px; }
+  .metric-val { font-size: 20px; font-weight: 500; color: var(--color-text-primary); }
+  .table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  .table th { text-align: left; font-weight: 500; font-size: 12px; color: var(--color-text-secondary); padding: 6px 10px; border-bottom: 0.5px solid var(--color-border-tertiary); }
+  .table td { padding: 8px 10px; border-bottom: 0.5px solid var(--color-border-tertiary); color: var(--color-text-primary); vertical-align: top; }
+  .table tr:last-child td { border-bottom: none; }
+  .pill { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 99px; font-weight: 500; }
+  .pill-green { background: #EAF3DE; color: #3B6D11; }
+  .pill-amber { background: #FAEEDA; color: #633806; }
+  .pill-red { background: #FCEBEB; color: #791F1F; }
+  .pill-blue { background: #E6F1FB; color: #0C447C; }
+  .divider { border: none; border-top: 0.5px solid var(--color-border-tertiary); margin: 1.5rem 0; }
+  .stack { display: flex; flex-direction: column; gap: 8px; }
+  .row { display: flex; align-items: flex-start; gap: 10px; }
+  .dot { width: 7px; height: 7px; border-radius: 50%; margin-top: 6px; flex-shrink: 0; }
+  .dot-blue { background: #378ADD; }
+  .dot-teal { background: #1D9E75; }
+  .dot-purple { background: #7F77DD; }
+  .dot-amber { background: #EF9F27; }
+  .milestone-row { display: flex; gap: 12px; align-items: flex-start; padding: 8px 0; border-bottom: 0.5px solid var(--color-border-tertiary); font-size: 14px; }
+  .milestone-row:last-child { border-bottom: none; }
+  .ms-day { font-weight: 500; min-width: 64px; color: var(--color-text-primary); }
+  .ms-desc { color: var(--color-text-secondary); }
+</style>
+
+<div class="prd">
+
+  <div class="prd-header">
+    <div class="prd-title">Sign Language Gesture Recognition — PRD</div>
+    <div class="prd-meta">
+      <span class="badge badge-blue">Version 1.0</span>
+      <span class="badge badge-teal">Status: Draft</span>
+      <span class="badge badge-amber">Phase: Option A (Rule-Based)</span>
+      <span class="badge badge-purple">Owner: Karthik</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Overview</div>
+    <div class="card">
+      <div class="card-title">Problem statement</div>
+      <div class="card-desc">Users with hearing or speech impairments have no gesture-based interaction method for web apps. This project enables real-time sign language gesture recognition via webcam to trigger UI actions (like, confirm, reject, etc.) — making the web more accessible and interactive.</div>
+    </div>
+    <div class="card">
+      <div class="card-title">Solution</div>
+      <div class="card-desc">A browser-based app using MediaPipe Hands to detect hand landmarks in real-time, classify gestures using rule-based logic, and map them to UI actions — no backend, no model training required in Phase 1.</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section">
+    <div class="section-title">Goals & success metrics</div>
+    <div class="metrics">
+      <div class="metric"><div class="metric-label">Gesture accuracy</div><div class="metric-val">&ge;90%</div></div>
+      <div class="metric"><div class="metric-label">Detection latency</div><div class="metric-val">&lt;200ms</div></div>
+      <div class="metric"><div class="metric-label">Gestures supported</div><div class="metric-val">6</div></div>
+      <div class="metric"><div class="metric-label">Build time (Phase 1)</div><div class="metric-val">2 days</div></div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section">
+    <div class="section-title">Target users</div>
+    <div class="stack">
+      <div class="row"><div class="dot dot-blue"></div><div class="card-desc" style="font-size:14px;"><strong style="font-weight:500">Primary:</strong> People with hearing/speech impairments who prefer gesture-based input</div></div>
+      <div class="row"><div class="dot dot-teal"></div><div class="card-desc" style="font-size:14px;"><strong style="font-weight:500">Secondary:</strong> Developers / researchers exploring gesture UI on the web</div></div>
+      <div class="row"><div class="dot dot-purple"></div><div class="card-desc" style="font-size:14px;"><strong style="font-weight:500">Tertiary:</strong> Recruiters / evaluators reviewing Karthik's AI portfolio projects</div></div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section">
+    <div class="section-title">Functional requirements</div>
+    <div style="border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); overflow: hidden;">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Requirement</th>
+            <th>Gesture</th>
+            <th>Action triggered</th>
+            <th>Priority</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>FR-01</td><td>Detect HELLO gesture</td><td>Open palm near face, wave</td><td>Welcome / open modal</td><td><span class="pill pill-red">P0</span></td></tr>
+          <tr><td>FR-02</td><td>Detect GOODBYE gesture</td><td>Fingers curl downward</td><td>Close / exit screen</td><td><span class="pill pill-red">P0</span></td></tr>
+          <tr><td>FR-03</td><td>Detect PLEASE gesture</td><td>Hand flat on chest</td><td>Submit / confirm</td><td><span class="pill pill-red">P0</span></td></tr>
+          <tr><td>FR-04</td><td>Detect THANK YOU gesture</td><td>Hand moves from chin outward</td><td>Like / upvote</td><td><span class="pill pill-red">P0</span></td></tr>
+          <tr><td>FR-05</td><td>Detect YES gesture</td><td>Fist nodding motion</td><td>Approve / agree</td><td><span class="pill pill-amber">P1</span></td></tr>
+          <tr><td>FR-06</td><td>Detect NO gesture</td><td>Index finger side-to-side</td><td>Reject / dislike</td><td><span class="pill pill-amber">P1</span></td></tr>
+          <tr><td>FR-07</td><td>Live webcam feed</td><td>—</td><td>Show camera + skeleton overlay</td><td><span class="pill pill-red">P0</span></td></tr>
+          <tr><td>FR-08</td><td>Gesture label display</td><td>—</td><td>Show detected gesture name on screen</td><td><span class="pill pill-red">P0</span></td></tr>
+          <tr><td>FR-09</td><td>Action feedback</td><td>—</td><td>Toast / highlight showing what was triggered</td><td><span class="pill pill-amber">P1</span></td></tr>
+          <tr><td>FR-10</td><td>Cooldown between gestures</td><td>—</td><td>Prevent repeat triggers (1.5s debounce)</td><td><span class="pill pill-amber">P1</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section">
+    <div class="section-title">Non-functional requirements</div>
+    <div class="stack">
+      <div class="row"><div class="dot dot-blue"></div><div class="card-desc" style="font-size:14px;"><strong style="font-weight:500">Performance:</strong> Runs at 30+ FPS on a mid-range laptop with integrated GPU</div></div>
+      <div class="row"><div class="dot dot-teal"></div><div class="card-desc" style="font-size:14px;"><strong style="font-weight:500">Privacy:</strong> All processing is on-device. No video data is sent to any server</div></div>
+      <div class="row"><div class="dot dot-purple"></div><div class="card-desc" style="font-size:14px;"><strong style="font-weight:500">Compatibility:</strong> Works on Chrome and Edge (desktop). Mobile optional in Phase 2</div></div>
+      <div class="row"><div class="dot dot-amber"></div><div class="card-desc" style="font-size:14px;"><strong style="font-weight:500">Portability:</strong> Single HTML file — no install, no server, runs locally or on GitHub Pages</div></div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section">
+    <div class="section-title">Tech stack</div>
+    <div style="border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); overflow: hidden;">
+      <table class="table">
+        <thead><tr><th>Layer</th><th>Technology</th><th>Reason</th></tr></thead>
+        <tbody>
+          <tr><td>Hand tracking</td><td>MediaPipe Hands (JS CDN)</td><td>Already used in Balloon Shooter — zero setup</td></tr>
+          <tr><td>Gesture logic</td><td>Custom JS (rule-based)</td><td>Fast, no training needed, full control</td></tr>
+          <tr><td>UI</td><td>HTML5 + Canvas + CSS</td><td>Single file, portable, no framework needed</td></tr>
+          <tr><td>Camera</td><td>WebRTC getUserMedia()</td><td>Native browser API, no install</td></tr>
+          <tr><td>Hosting</td><td>GitHub Pages</td><td>Free, instant, shareable link for portfolio</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section">
+    <div class="section-title">Out of scope (Phase 1)</div>
+    <div class="stack">
+      <div class="row"><div class="dot dot-amber"></div><div class="card-desc" style="font-size:14px;">ML model training (planned for Phase 2)</div></div>
+      <div class="row"><div class="dot dot-amber"></div><div class="card-desc" style="font-size:14px;">Two-hand simultaneous gesture detection</div></div>
+      <div class="row"><div class="dot dot-amber"></div><div class="card-desc" style="font-size:14px;">Mobile / touch device support</div></div>
+      <div class="row"><div class="dot dot-amber"></div><div class="card-desc" style="font-size:14px;">Full ASL/ISL alphabet recognition</div></div>
+      <div class="row"><div class="dot dot-amber"></div><div class="card-desc" style="font-size:14px;">Backend API or database integration</div></div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section">
+    <div class="section-title">Milestones (2-day sprint)</div>
+    <div class="card" style="padding: 0.75rem 1.25rem;">
+      <div class="milestone-row"><div class="ms-day">Day 1 AM</div><div class="ms-desc">Set up MediaPipe Hands, webcam feed, hand landmark overlay on canvas</div></div>
+      <div class="milestone-row"><div class="ms-day">Day 1 PM</div><div class="ms-desc">Implement rule-based gesture classifier for all 6 gestures</div></div>
+      <div class="milestone-row"><div class="ms-day">Day 2 AM</div><div class="ms-desc">Map gestures to UI actions, add feedback toast, add debounce cooldown</div></div>
+      <div class="milestone-row"><div class="ms-day">Day 2 PM</div><div class="ms-desc">Polish UI, test across lighting conditions, deploy to GitHub Pages</div></div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section">
+    <div class="section-title">Risks & mitigations</div>
+    <div style="border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); overflow: hidden;">
+      <table class="table">
+        <thead><tr><th>Risk</th><th>Likelihood</th><th>Mitigation</th></tr></thead>
+        <tbody>
+          <tr><td>Poor detection in low light</td><td><span class="pill pill-amber">Medium</span></td><td>Add lighting warning UI, recommend natural light</td></tr>
+          <tr><td>Similar gestures confused (YES vs NO)</td><td><span class="pill pill-amber">Medium</span></td><td>Add motion direction check (vertical vs horizontal)</td></tr>
+          <tr><td>Camera permission denied</td><td><span class="pill pill-green">Low</span></td><td>Show clear permission prompt with fallback message</td></tr>
+          <tr><td>MediaPipe CDN unavailable</td><td><span class="pill pill-green">Low</span></td><td>Bundle locally or use fallback CDN link</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section">
+    <div class="section-title">Phase 2 — future scope</div>
+    <div class="stack">
+      <div class="row"><div class="dot dot-teal"></div><div class="card-desc" style="font-size:14px;">Collect landmark data and train a TensorFlow.js LSTM model for dynamic gestures</div></div>
+      <div class="row"><div class="dot dot-teal"></div><div class="card-desc" style="font-size:14px;">Expand to 20+ gestures covering common ISL/ASL vocabulary</div></div>
+      <div class="row"><div class="dot dot-teal"></div><div class="card-desc" style="font-size:14px;">Add text-to-speech output for recognized gestures</div></div>
+      <div class="row"><div class="dot dot-teal"></div><div class="card-desc" style="font-size:14px;">Embed as a React component for Mr. Helper app accessibility feature</div></div>
+    </div>
+  </div>
+
+</div>
