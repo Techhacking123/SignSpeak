@@ -93,7 +93,6 @@ Deploy to GitHub Pages for a shareable link:
 ```
 sign-language-recognition/
 ├── index.html              # Complete application (single file)
-├── sign_language_prd.html  # Product Requirements Document
 └── README.md               # This file
 ```
 
